@@ -58,7 +58,7 @@ public class TicTacToeBoard {
   }
   
   public boolean checkWinner(char check) {
-          if(board.charAt(0) == check && board.charAt(1) == check && board.charAt(2) == check) || (board.charAt(3) == check && board.charAt(4) == check && board.charAt(5) == check){
+          if(board.charAt(0) == check && board.charAt(1) == check && board.charAt(2) == check) {
                   return true;
           }
           else if(board.charAt(3) == check && board.charAt(4) == check && board.charAt(5) == check) {
