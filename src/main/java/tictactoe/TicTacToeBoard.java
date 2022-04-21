@@ -22,7 +22,7 @@ public class TicTacToeBoard {
    */
   public Evaluation evaluate() {
           if(board.length() != 9) {
-                  return Evaluation.UnreachableState;
+                  return Evaluation.UNREACHABLESTATE;
           }
           int xCount = 0;
           int oCount = 0;
@@ -35,21 +35,21 @@ public class TicTacToeBoard {
                   }
           }
           if(Math.abs(xCount - oCount) >= 2) {
-                  return Evaluation.UnreachableState;
+                  return Evaluation.UNREACHABLESTATE;
           }
           boolean xWins = checkWinner('x');
           boolean oWins = checkWinner('o');
           if(xWins && oWins) {
-                  return Evaluation.UnreachableState;
+                  return Evaluation.UNREACHABLESTATE;
           }
           if(xWins) {
-                  return Evaluation.Xwins;
+                  return Evaluation.XWINS;
           }
           else if(oWins) {
-                  return Evaluation.Owins;
+                  return Evaluation.OWINS;
           }
           else {
-                  return Evaluation.NoWinner;
+                  return Evaluation.NOWINNER;
           }
   }
   
