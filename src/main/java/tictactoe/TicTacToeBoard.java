@@ -86,7 +86,7 @@ public class TicTacToeBoard {
   public static void main(String[] args) {
                 TicTacToeBoard x = new TicTacToeBoard("xoxoxxxoo");
                 
-                logger.log(Level.INFO,x.evaluate().toString());
+                logger.log(Level.INFO,"{0}",x.evaluate().toString());
                 
   }
 }
