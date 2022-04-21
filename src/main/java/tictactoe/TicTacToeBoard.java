@@ -1,5 +1,8 @@
 package tictactoe;
 
+import java.util.logging.Logger;
+import java.util.logging.Level;
+
 /**
  * Takes in and evaluates a string representing a tic tac toe board.
  */
@@ -11,6 +14,7 @@ public class TicTacToeBoard {
    */
         
   String board;
+  static Logger logger=Logger.getLogger(TicTacToeBoard.class.getName());
   
   public TicTacToeBoard(String board) {
           this.board = board.toLowerCase();
@@ -22,7 +26,7 @@ public class TicTacToeBoard {
    */
   public Evaluation evaluate() {
           if(board.length() != 9) {
-                  return Evaluation.UNREACHABLESTATE;
+                  return Evaluation.UnreachableState;
           }
           int xCount = 0;
           int oCount = 0;
@@ -34,22 +38,22 @@ public class TicTacToeBoard {
                           oCount++;
                   }
           }
-           if(Math.abs(xCount - oCount) >= 2) {
-                   return Evaluation.UNREACHABLESTATE;
-           }
+          if(Math.abs(xCount - oCount) >= 2) {
+                  return Evaluation.UnreachableState;
+          }
           boolean xWins = checkWinner('x');
           boolean oWins = checkWinner('o');
-          if(xWins && oWins ) {
-                  return Evaluation.UNREACHABLESTATE;
+          if(xWins && oWins) {
+                  return Evaluation.UnreachableState;
           }
           if(xWins) {
-                  return Evaluation.XWINS;
+                  return Evaluation.Xwins;
           }
           else if(oWins) {
-                  return Evaluation.OWINS;
+                  return Evaluation.Owins;
           }
           else {
-                  return Evaluation.NOWINNER;
+                  return Evaluation.NoWinner;
           }
   }
   
@@ -80,8 +84,9 @@ public class TicTacToeBoard {
   }
   
   public static void main(String[] args) {
-                TicTacToeBoard x = new TicTacToeBoard("oxoxoxoxox");
-                System.out.println(x.evaluate());
+                TicTacToeBoard x = new TicTacToeBoard("xoxoxxxoo");
+                
+                logger.log(Level.INFO,x.evaluate().toString());
                 
   }
 }
