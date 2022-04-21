@@ -34,12 +34,12 @@ public class TicTacToeBoard {
                           oCount++;
                   }
           }
-//           if() {
-//                   return Evaluation.UNREACHABLESTATE;
-//           }
+           if(Math.abs(xCount - oCount) >= 2) {
+                   return Evaluation.UNREACHABLESTATE;
+           }
           boolean xWins = checkWinner('x');
           boolean oWins = checkWinner('o');
-          if(xWins && oWins && Math.abs(xCount - oCount) >= 2) {
+          if(xWins && oWins ) {
                   return Evaluation.UNREACHABLESTATE;
           }
           if(xWins) {
