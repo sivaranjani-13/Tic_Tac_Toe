@@ -58,27 +58,11 @@ public class TicTacToeBoard {
   }
   
   public boolean checkWinner(char check) {
-          if(board.charAt(0) == check && board.charAt(1) == check && board.charAt(2) == check) {
+          if((board.charAt(0) == check && board.charAt(1) == check && board.charAt(2) == check) || (board.charAt(3) == check && board.charAt(4) == check && board.charAt(5) == check)||(board.charAt(6) == check && board.charAt(7) == check && board.charAt(8) == check)||(board.charAt(0) == check && board.charAt(3) == check && board.charAt(6) == check)||(board.charAt(1) == check && board.charAt(4) == check && board.charAt(7) == check)||(board.charAt(2) == check && board.charAt(5) == check && board.charAt(8) == check)||(board.charAt(0) == check && board.charAt(4) == check && board.charAt(8) == check)){
                   return true;
           }
-          else if(board.charAt(3) == check && board.charAt(4) == check && board.charAt(5) == check) {
-                  return true;
-          }
-          else if(board.charAt(6) == check && board.charAt(7) == check && board.charAt(8) == check) {
-                  return true;
-          }
-          else if(board.charAt(0) == check && board.charAt(3) == check && board.charAt(6) == check) {
-                  return true;
-          }
-          else if(board.charAt(1) == check && board.charAt(4) == check && board.charAt(7) == check) {
-                  return true;
-          }
-          else if(board.charAt(2) == check && board.charAt(5) == check && board.charAt(8) == check) {
-                  return true;
-          }
-          else if(board.charAt(0) == check && board.charAt(4) == check && board.charAt(8) == check) {
-                  return true;
-          }
+         
+ 
           
           return board.charAt(2) == check && board.charAt(4) == check && board.charAt(6) == check;
   }
@@ -86,7 +70,7 @@ public class TicTacToeBoard {
   public static void main(String[] args) {
                 TicTacToeBoard x = new TicTacToeBoard("xoxoxxxoo");
                 
-                logger.log(Level.INFO,"{0}",x.evaluate());
+                logger.log(Level.INFO,x.evaluate().toString());
                 
   }
 }
